@@ -8,5 +8,8 @@ class Post(models.Model):
     image = models.ImageField(upload_to='images/')
     data_publicacao = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['data_publicacao']  # Ordenação padrão: mais antigos primeiro
+
     def __str__(self):
         return self.titulo
