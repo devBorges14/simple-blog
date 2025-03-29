@@ -1,28 +1,85 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="static/style.css">
+
     <title>{% block title %}{% endblock %}</title>
 </head>
 
-    {% block content %}
-    {% endblock %}
-</body>
-<a href="/admin" class="button">Página do Administrador</a>
-<footer class="footer">
-    <div class="container">
-        <p>© 2025 Gabriel Borges | Desenvolvedor Backend</p>
-        <p>
-            <a href="https://github.com/devBorges14" target="_blank">GitHub</a> |
-            <a href="mailto:borges.11.g@gmail.com">Email</a>
-        </p>
-    </div>
-</footer>
-
 <body>
-</html> 
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="{% static 'img/user_logo.jpg' %}" id="user_avatar" alt="Avatar">
+                <p id="user_infos">
+                    <span class="item-description">
+                        Gabriel Borges
+                    </span>
+                    <span class="item-description">
+                        Criador do Blog
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+                <li class="side-item">
+                    <a href="/admin">
+                        <i class="fa-solid fa-gears"></i>
+                        <span class="side-item-name">Configurações Admin</span>
+                    </a>
+                </li>
+
+                <li class="cod_github">
+                    <a href="https://github.com/devBorges14/simple-blog">
+                        <i class="fa-solid fa-code"></i>
+                        <span class="side-item-name">Código GitHub</span>
+                    </a>
+                </li>
+
+                <li class="contato">
+                    <a href="#">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="side-item-name">Contatos</span>
+                    </a>
+                </li>
+                <li class="creator">
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="side-item-name">Sobre o criador</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <button id="open_btn">
+                <i id="open_bnt_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Gabriel Borges | Desenvolvedor Backend</p>
+            <p>
+                <a href="https://github.com/devBorges14" target="_blank">GitHub</a> |
+                <a href="mailto:borges.11.g@gmail.com">Email</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="{% static 'posts_app/javascript/script.js' %}"></script>
+</body>
+
+</html>

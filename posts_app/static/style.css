@@ -1,127 +1,85 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+#sidebar {
+    width: 250px; /* Definindo uma largura padrão */
+    height: 100vh; /* Altura total da tela */
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #111;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+#sidebar_content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
 }
 
-h1 {
+#user {
     text-align: center;
-    color: #333;
-}
-
-.post {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    width: 80%;
-    max-width: 800px;
 }
 
-.post h2 {
-    color: #444;
-    margin-bottom: 10px;
+#user_avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 
-.post p {
-    color: #666;
-    line-height: 1.6;
-}
-
-.post img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    max-height: 300px;
-    border-radius: 8px;
+#user_infos {
+    color: white;
     margin-top: 10px;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    flex: 1; /* Faz o conteúdo ocupar todo o espaço disponível */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer {
-    background: #181818;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
     font-size: 14px;
-    margin-top: auto; /* Faz o footer sempre ficar no final */
 }
 
-.footer a {
-    color: #1DB954;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
+/* Estilizando os itens da sidebar */
+#side_items {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
 }
 
-.footer a:hover {
-    color: #fff;
+.side-item {
+    width: 100%;
+    margin: 10px 0;
 }
 
-@media (max-width: 600px) {
-    .footer {
-        font-size: 12px;
-    }
-}
-
-.button {
-    position: fixed; /* Fixa na tela */
-    top: 20px; /* Distância do topo */
-    right: 20px; /* Distância da borda direita */
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
+.side-item a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: white;
-    background: linear-gradient(45deg, #4e41ff, #1c00b9);
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.side-item a:hover {
+    background-color: #575757;
+}
+
+.side-item i {
+    margin-right: 10px;
+}
+
+/* Estilizando o botão de abrir/fechar a sidebar */
+#open_btn {
+    background: none;
     border: none;
-    border-radius: 8px;
-    transition: 0.3s;
+    color: white;
+    font-size: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(68, 65, 255, 0.3);
-}
-
-
-.button::before {
-    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, rgba(255, 255, 255, 0) 80%);
-    transition: 0.3s;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+    top: 20px;
+    right: -40px;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.button:hover::before {
-    width: 150%;
-    height: 150%;
-    opacity: 1;
-}
-
-.button:active {
-    transform: scale(0.95);
+#open_btn:hover {
+    background-color: #444;
 }
